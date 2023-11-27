@@ -19,6 +19,7 @@ use winit::window::{Fullscreen, Icon, WindowBuilder};
 use automancy::camera::Camera;
 use automancy::gpu::Gpu;
 use automancy::input::KeyActions;
+use automancy::util::discord::setup_presence;
 use automancy_defs::flexstr::ToSharedStr;
 use automancy_defs::gui::init_gui;
 use automancy_defs::gui::set_font;
@@ -130,6 +131,9 @@ fn main() -> eyre::Result<()> {
             }
         }));
     }
+
+    // --- discord ---
+    setup_presence();
 
     // --- window ---
     let event_loop = EventLoop::new();
