@@ -133,7 +133,7 @@ fn main() -> eyre::Result<()> {
     }
 
     // --- discord ---
-    setup_presence();
+    setup_presence().expect("failed to enable discord RP");
 
     // --- window ---
     let event_loop = EventLoop::new();
